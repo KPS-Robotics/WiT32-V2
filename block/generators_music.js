@@ -126,11 +126,14 @@ void tone(int pin, int frequency, int duration) {
 
   Blockly.JavaScript["music_buzzer_note"] = function(block) {
     var value_tone = block.getFieldValue("NOTE");
-    var value_dulation = block.getFieldValue("DURATION");
-    var code = ` tone(BUZZER_PIN, ${value_tone}, ${value_dulation}); `;
+    var code = ` BAX.Tone( ${value_tone}); `;
     return code;
   };
 
+  Blockly.JavaScript["music_buzzer_notone"] = function(block) {
+    var code = ` BAX.NoTone(); `;
+    return code;
+  };
   Blockly.JavaScript["music_buzzer_frequency"] = function(block) {
     var value_frequency = valueToCode(block, "FREQUENCY", ORDER_ATOMIC);
     var value_dulation = valueToCode(block, "DURATION", ORDER_ATOMIC);

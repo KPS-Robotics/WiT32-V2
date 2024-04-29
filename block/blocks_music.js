@@ -242,6 +242,25 @@ Blockly.Blocks['music_song_cannon_rock'] = {
     }
 };
 
+
+  Blockly.Blocks["music_buzzer_notone"] = {
+    init: function() {
+      this.appendDummyInput()
+        .appendField(
+          new Blockly.FieldImage("/static/block_icons/buzzer.png",
+            30,
+            30,
+            "*")
+        )
+
+        .appendField("No Tone")
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(music_colour);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
   Blockly.Blocks["music_buzzer_note"] = {
     init: function() {
       this.appendDummyInput()
@@ -293,12 +312,6 @@ Blockly.Blocks['music_song_cannon_rock'] = {
             [Blockly.Msg.MUSIC_NOTE_C4, "262"]
           ]),
           "NOTE"
-        );
-      this.appendDummyInput()
-        .appendField(Blockly.Msg.MUSIC_NOTE_DURATION)
-        .appendField(
-          new Blockly.FieldDropdown(Blockly.Blocks["music_duration_opt"]),
-          "DURATION"
         );
       this.setInputsInline(true);
       this.setPreviousStatement(true);

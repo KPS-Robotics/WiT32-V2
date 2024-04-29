@@ -19,6 +19,10 @@ void setup()
 
 void loop()
 {
-  
+    servo(2, 0);
+   BAX.Tone( 1397); delay(1000);
+   BAX.NoTone(); servo(2, 180);
+  delay(1000);
+
   
 }
